@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "skills": {
+    "api-design-principles": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "computedHash": "b242f962d5f78bf8bc147e92f2aa0341459b9f5f2f955e9867a8c41b85f22648"
+    },
+    "cicd-automation-workflow-automate": {
+      "source": "rmyndharis/antigravity-skills",
+      "sourceType": "github",
+      "computedHash": "b44d0ce7d583f9f3f7f252dfff709ecaac2a0ff24ec303159afd2d5412c417a1"
+    },
+    "cors-configuration": {
+      "source": "patricio0312rev/skills",
+      "sourceType": "github",
+      "computedHash": "f58589658b978f6fdb5e9bb46f3925469952b9e54b075db81ebd773fd697a72f"
+    },
+    "frontend-mobile-development-component-scaffold": {
+      "source": "rmyndharis/antigravity-skills",
+      "sourceType": "github",
+      "computedHash": "a9337184848be1f948167ef7545fd48d0803f8f89c791485fed01243100d8d2e"
+    },
+    "full-stack-orchestration-full-stack-feature": {
+      "source": "rmyndharis/antigravity-skills",
+      "sourceType": "github",
+      "computedHash": "1db742950c84e63ae7af75120faf59aa9767e32e0b4ddf91132c3eb07064225a"
+    },
+    "unit-testing-test-generate": {
+      "source": "rmyndharis/antigravity-skills",
+      "sourceType": "github",
+      "computedHash": "8aaab2732a262d8f675a1fc6f6a07998c8963205ccfcc1ba9b5b802f16b96559"
+    }
+  }
+}
