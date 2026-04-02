@@ -1,5 +1,0 @@
-com\dashboard\service\ProjectService.class
-com\dashboard\DashboardApplication.class
-com\dashboard\repository\ProjectRepository.class
-com\dashboard\controller\ProjectController.class
-com\dashboard\model\Project.class
