@@ -16,7 +16,15 @@ export default function App() {
   const [projects, setProjects] = useState(projectsData)   // full list
   const [filter, setFilter] = useState('All')           // active filter
   const [search, setSearch] = useState('')              // search text
-
+  // p is an object with the following properties:
+  // p: {
+  //   id: INT,
+  //   name: STRING,
+  //   client: STRING,
+  //   status: STRING,
+  //   deadline: STRING,
+  //   pct: INT
+  // }
   // ── DERIVED VALUES (calculated from state, not stored separately) ──
   const total = projects.length
   const active = projects.filter(p => p.status === 'Active').length
@@ -24,6 +32,7 @@ export default function App() {
   const completed = projects.filter(p => p.status === 'Completed').length
 
   // Filtered + searched list shown in the grid
+
   const visible = projects
     .filter(p => filter === 'All' || p.status === filter)
     .filter(p =>
@@ -59,7 +68,7 @@ export default function App() {
               CP
             </div>
             <span className="font-display font-bold text-lg tracking-tight">
-              Client<span className="text-blue-400">Pulse</span>
+              Client<span className="text-blue-400 animate-pulse">Pulse</span>
             </span>
           </div>
 

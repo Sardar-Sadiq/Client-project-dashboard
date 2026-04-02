@@ -1,0 +1,66 @@
+Client Project Dashboard - Architecture and File Structure Overview
+===================================================================
+
+This document explains the file structure of the "Client Project Dashboard" application and how the different components work together to form the complete user interface.
+
+## 1. High-Level Technology Stack
+- **Frontend Framework**: React (v18)
+- **Build Tool**: Vite (fast development server and builder)
+- **Styling**: Tailwind CSS (utility-first CSS framework)
+- **Language**: JavaScript (JSX)
+
+---
+
+## 2. File Structure
+
+```text
+d:\sadiq\Client-project-dashboard\
+├── src\                       # Main source code folder
+│   ├── components\            # Reusable React UI components
+│   │   ├── FilterBar.jsx      # Search and status filter controls
+│   │   ├── ProjectCard.jsx    # Visual representation of a single project
+│   │   └── StatCard.jsx       # Small cards showing summary statistics
+│   ├── data\                  # Data sources
+│   │   └── projects.js        # Mock JSON data simulating a backend API
+│   ├── App.jsx                # The root component linking everything together
+│   ├── main.jsx               # React entry point, mounts the app to the HTML
+│   └── index.css              # Global CSS, typically used with Tailwind imports
+├── package.json               # Defines dependencies (React, Vite, Tailwind) and scripts
+├── vite.config.js             # Configuration for the Vite build tool
+├── tailwind.config.js         # Configuration for Tailwind CSS (themes, colors)
+├── postcss.config.js          # Processes CSS for Tailwind
+└── index.html                 # The main HTML structure where the React app is injected
+```
+
+---
+
+## 3. How the Application Works
+
+### The Data Layer
+The application simulates a backend API by reading static mocked data from `src/data/projects.js`. In a real-world scenario, this data would be fetched from a server (like a Spring Boot application).
+- Each project object has properties like `id`, `name`, `client`, `status`, `deadline`, and `pct` (progress percentage).
+
+### The Root Component (`src/App.jsx`)
+`App.jsx` serves as the "brain" of the application. It manages all the dynamic data (state) and distributes it to the child components.
+1. **State Management**: It uses React's `useState` hook to keep track of:
+   - `projects`: The full list of projects.
+   - `filter`: The currently selected status filter (e.g., 'All', 'Active').
+   - `search`: The text typed into the search bar.
+2. **Derived Data Calculation**: It dynamically computes summary statistics (Total, Active, On Hold, Completed) and the filtered list of projects that should be currently visible based on the filter and search text.
+3. **Event Handling**: It contains functions like `handleRemove` to manipulate the project state when a user clicks the "Remove" button on a specific project card.
+
+### Sub-Components (`src/components/`)
+`App.jsx` delegates the actual UI layout to dedicated, smaller components:
+
+- **FilterBar.jsx**:
+  Provides interactive buttons for filtering projects by their status (All, Active, On Hold, Completed) and an input field for text search. It calls functions passed from `App.jsx` whenever the user changes a filter or search text.
+
+- **StatCard.jsx**:
+  Displays a high-level summary at the top of the dashboard. `App.jsx` renders four of these to show counts for "Total projects", "Active", "On hold", and "Completed".
+
+- **ProjectCard.jsx**:
+  Takes a single project object as input and returns the visual "Card". It conditionally applies Tailwind CSS styling based on the project's status (e.g., green for Active, yellow for On Hold) to render the status badge and progress bar. It also houses the "Remove" button, dispatching a click event back to `App.jsx`.
+
+### Setup and Build
+- When you run `npm run dev` or `bun run dev`, Vite spins up a local development server, reads `index.html`, and compiles the JSX rules into standard web-readable JavaScript.
+- Tailwind CSS processes utility classes written in the `.jsx` files and generates the corresponding CSS rules.

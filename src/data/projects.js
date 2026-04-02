@@ -11,7 +11,8 @@ const projects = [
   { id: 6, name: 'Security Audit', client: 'GovDept', status: 'On Hold', deadline: '15 Jul 2026', pct: 10 },
   { id: 7, name: 'CRM Integration', client: 'SalesForce Co', status: 'Completed', deadline: '20 Feb 2026', pct: 100 },
   { id: 8, name: 'DevOps Automation', client: 'CloudNine Ltd', status: 'Active', deadline: '10 Oct 2026', pct: 30 },
-  { id: 9, name: 'Web App', client: 'Team-X', status: 'Completed', deadline: '10 Mar 2026', pct: 45 }
+  { id: 9, name: 'Web App', client: 'Team-X', status: 'Completed', deadline: '10 Mar 2026', pct: 100 },
+  { id: 10, name: 'AI Bot', client: 'Stark Indus', status: 'Active', deadline: '21 Nov 2026', pct: 0 },
 ]
 
 export default projects
